@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="landing-page-server" />
+        <module name="grab-data-server" />
+        <module name="dot-server" />
+        <module name="link-advertise-core" />
+        <module name="form-collection-server" />
+        <module name="report-server" />
+        <module name="organization-server" />
+        <module name="sales-tracking-server" />
+        <module name="talk-server" />
+        <module name="advertise-server" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="advertise-server" options="-parameters" />
+      <module name="dot-server" options="-parameters" />
+      <module name="form-collection-server" options="-parameters" />
+      <module name="grab-data-server" options="-parameters" />
+      <module name="landing-page-server" options="-parameters" />
+      <module name="organization-server" options="-parameters" />
+      <module name="report-server" options="-parameters" />
+      <module name="sales-tracking-server" options="-parameters" />
+      <module name="talk-server" options="-parameters" />
+    </option>
+  </component>
+</project>

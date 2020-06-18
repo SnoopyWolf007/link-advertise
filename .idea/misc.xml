@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/organization-server/pom.xml" />
+        <option value="$PROJECT_DIR$/landing-page-server/pom.xml" />
+        <option value="$PROJECT_DIR$/dot-server/pom.xml" />
+        <option value="$PROJECT_DIR$/advertise-server/pom.xml" />
+        <option value="$PROJECT_DIR$/grab-data-server/pom.xml" />
+        <option value="$PROJECT_DIR$/talk-server/pom.xml" />
+        <option value="$PROJECT_DIR$/form-collection-server/pom.xml" />
+        <option value="$PROJECT_DIR$/sales-tracking-server/pom.xml" />
+        <option value="$PROJECT_DIR$/report-server/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
