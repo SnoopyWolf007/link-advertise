@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/form-collection-server/pom.xml" />
         <option value="$PROJECT_DIR$/sales-tracking-server/pom.xml" />
         <option value="$PROJECT_DIR$/report-server/pom.xml" />
+        <option value="$PROJECT_DIR$/link-eureka-server/pom.xml" />
       </list>
     </option>
   </component>
