@@ -12,6 +12,6 @@ public class DepartmentManagerInfo {
      * 项目负责人
      * */
 
-    private String organizationId;
-    private String personnelId;
+    private String organizationCode;
+    private String personnelCode;
 }

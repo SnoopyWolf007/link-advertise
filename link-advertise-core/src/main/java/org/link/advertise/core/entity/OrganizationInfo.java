@@ -7,14 +7,13 @@ import lombok.Data;
  * @Date: 2020/6/18 14:54
  */
 @Data
-public class OrganizationInfo {
+public class OrganizationInfo extends CommonInfo {
     /**
      * 组织架构信息
      * */
 
-    private String id;
-    private String name;
     private String code;
-    private String parentId;
+    private String name;
+    private String parentCode;
     private Integer level;
 }
