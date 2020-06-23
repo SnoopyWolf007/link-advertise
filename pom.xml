@@ -9,7 +9,17 @@
   <packaging>pom</packaging>
   <version>1.0.1</version>
   <modules>
+    <module>link-eureka-server</module>
     <module>link-advertise-core</module>
+    <module>organization-server</module>
+    <module>landing-page-server</module>
+    <module>dot-server</module>
+    <module>advertise-server</module>
+    <module>grab-data-server</module>
+    <module>talk-server</module>
+    <module>form-collection-server</module>
+    <module>sales-tracking-server</module>
+    <module>report-server</module>
   </modules>
 
   <name>link-advertise</name>
