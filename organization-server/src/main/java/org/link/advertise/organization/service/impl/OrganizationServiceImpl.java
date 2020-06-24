@@ -13,8 +13,8 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * @Author: changmingjiang
- * @Date: 2020/6/19 15:02
+ * @author jcm1024@163.com
+ * @date 2020/6/19 15:02
  */
 @Slf4j
 @Service
@@ -51,7 +51,7 @@ public class OrganizationServiceImpl implements OrganizationService {
 
     @Override
     public List<OrganizationInfo> findAll() throws BizException {
-        return null;
+        return organizationDAO.findAll();
     }
 
     @Override
