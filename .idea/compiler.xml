@@ -10,14 +10,14 @@
         <module name="landing-page-server" />
         <module name="grab-data-server" />
         <module name="link-eureka-server" />
-        <module name="link-advertise-core" />
         <module name="dot-server" />
         <module name="talk-server" />
         <module name="form-collection-server" />
+        <module name="advertise-server" />
         <module name="report-server" />
         <module name="sales-tracking-server" />
         <module name="organization-server" />
-        <module name="advertise-server" />
+        <module name="link-advertise-core" />
       </profile>
     </annotationProcessing>
   </component>
