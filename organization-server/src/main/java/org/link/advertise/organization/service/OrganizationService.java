@@ -6,7 +6,7 @@ import org.link.advertise.core.exception.BizException;
 import java.util.List;
 
 /**
- * @Author: changmingjiang
+ * @Author: jcm1024@163.com
  * @Date: 2020/6/19 15:02
  */
 public interface OrganizationService {
@@ -37,6 +37,12 @@ public interface OrganizationService {
      * @param code
      */
     OrganizationInfo getByCode(String code) throws BizException;
+
+    /***
+     * 获取所有子节点code
+     * @param code
+     * */
+    List<String> getChildCodes(String code, boolean incSelf);
 
     /**
      * 查询所有组织架构

@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * @author: changmingjiang
+ * @author: jcm1024@163.com
  * @date: 2020/6/24 19:00
  */
 @Getter

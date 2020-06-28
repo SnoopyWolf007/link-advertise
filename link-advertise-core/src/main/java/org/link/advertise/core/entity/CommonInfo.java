@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * @Author: changmingjiang
+ * @Author: jcm1024@163.com
  * @Date: 2020/6/19 15:33
  */
 @Data

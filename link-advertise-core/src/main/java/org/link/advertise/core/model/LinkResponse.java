@@ -1,9 +1,12 @@
 package org.link.advertise.core.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
- * @Author: changmingjiang
+ * @Author: jcm1024@163.com
  * @Date: 2020/6/19 14:47
  */
 @AllArgsConstructor

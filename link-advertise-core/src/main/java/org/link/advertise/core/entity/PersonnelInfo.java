@@ -3,7 +3,7 @@ package org.link.advertise.core.entity;
 import lombok.Data;
 
 /**
- * @Author: changmingjiang
+ * @Author: jcm1024@163.com
  * @Date: 2020/6/18 14:55
  */
 @Data

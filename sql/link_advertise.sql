@@ -46,3 +46,20 @@ CREATE TABLE `t_personnel_info` (
   PRIMARY KEY (`code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 SET FOREIGN_KEY_CHECKS=1;
+
+-- ----------------------------
+-- Function structure for fn_get_org_child
+-- ----------------------------
+DROP FUNCTION IF EXISTS fn_get_org_child;
+CREATE FUNCTION fn_get_org_child(rCode CHAR) RETURNS varchar(2000) CHARSET utf8
+BEGIN
+DECLARE temp VARCHAR(2000);
+DECLARE temp_child VARCHAR(2000);
+SET temp = '$';
+SET temp_child = rCode;
+WHILE temp_child is not null DO
+SET temp = CONCAT(temp,',',temp_child);
+SELECT GROUP_CONCAT(`code`) INTO temp_child FROM `t_organization_info` where FIND_IN_SET(parent_code, temp_child) > 0;
+END WHILE;
+RETURN temp;
+END

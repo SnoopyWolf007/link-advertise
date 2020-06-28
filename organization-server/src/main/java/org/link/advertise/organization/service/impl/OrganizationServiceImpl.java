@@ -8,7 +8,10 @@ import org.link.advertise.core.exception.BizException;
 import org.link.advertise.organization.dao.OrganizationDAO;
 import org.link.advertise.organization.service.OrganizationService;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -28,7 +31,7 @@ public class OrganizationServiceImpl implements OrganizationService {
         if (Objects.isNull(organizationInfo)) {
             return;
         }
-        organizationDAO.add(organizationInfo);
+        organizationDAO.insert(organizationInfo);
     }
 
     @Override
@@ -46,7 +49,10 @@ public class OrganizationServiceImpl implements OrganizationService {
 
     @Override
     public OrganizationInfo getByCode(String code) throws BizException {
-        return null;
+        if (Strings.isBlank(code)) {
+            return null;
+        }
+        return organizationDAO.getByCode(code);
     }
 
     @Override
@@ -56,11 +62,48 @@ public class OrganizationServiceImpl implements OrganizationService {
 
     @Override
     public List<OrganizationInfo> findCurrentChild(String code) throws BizException {
-        return null;
+        if (Strings.isBlank(code)) {
+            return new ArrayList<>();
+        }
+        return organizationDAO.findCurrentChild(code);
+    }
+
+    @Override
+    public List<String> getChildCodes(String code, boolean incSelf) {
+        if (Strings.isBlank(code)) {
+            return new ArrayList<>();
+        }
+        String chileNodeStr = organizationDAO.getChileNodeStr(code);
+        if (Strings.isBlank(chileNodeStr)) {
+            return new ArrayList<>();
+        }
+
+        String[] split = chileNodeStr.split(",");
+        if (2 == split.length) {
+            return new ArrayList<>();
+        }
+        String[] nodeArr = null;
+        if (incSelf) {
+            nodeArr = Arrays.copyOfRange(split, 1, split.length);
+        } else {
+            nodeArr = Arrays.copyOfRange(split, 2, split.length);
+        }
+        List<String> nodeList = Arrays.asList(nodeArr);
+        return nodeList;
     }
 
     @Override
     public List<OrganizationInfo> findAllChild(String code) throws BizException {
-        return null;
+        if (Strings.isBlank(code)) {
+            return new ArrayList<>();
+        }
+
+        List<String> nodeList = getChildCodes(code, false);
+        if (CollectionUtils.isEmpty(nodeList)) {
+            return new ArrayList<>();
+        }
+
+        return organizationDAO.findByCodes(nodeList);
     }
+
 }
