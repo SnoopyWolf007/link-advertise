@@ -3,10 +3,10 @@ package org.link.advertise.landingpage.controller;
 import com.alibaba.druid.util.StringUtils;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.link.advertise.core.dto.PageDTO;
 import org.link.advertise.core.entity.DomainInfo;
 import org.link.advertise.core.model.LinkResponse;
 import org.link.advertise.landingpage.dto.DomainDTO;
-import org.link.advertise.landingpage.dto.PageDTO;
 import org.link.advertise.landingpage.service.DomainService;
 import org.springframework.web.bind.annotation.*;
 

@@ -3,6 +3,7 @@ package org.link.advertise.landingpage.dto;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.link.advertise.core.dto.PageDTO;
 import org.link.advertise.core.entity.DomainInfo;
 
 import java.util.List;

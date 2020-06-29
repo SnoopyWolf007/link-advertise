@@ -3,11 +3,12 @@ package org.link.advertise.landingpage.service.impl;
 import com.alibaba.druid.util.StringUtils;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.link.advertise.core.dto.PageDTO;
 import org.link.advertise.core.entity.LandingPageInfo;
 import org.link.advertise.core.util.Md5Util;
+import org.link.advertise.core.util.PageUtils;
 import org.link.advertise.landingpage.dao.LandingPageDAO;
 import org.link.advertise.landingpage.dto.LandingPageDTO;
-import org.link.advertise.landingpage.dto.PageDTO;
 import org.link.advertise.landingpage.service.LandingPageService;
 import org.springframework.stereotype.Service;
 
@@ -54,18 +55,15 @@ public class LandingPageServiceImpl implements LandingPageService {
                 || pageDTO.verifyParam()) {
             return new LandingPageDTO(pageDTO.getPage(), pageDTO.getPageSize());
         }
-        LandingPageDTO landingPageDTO = new LandingPageDTO();
         Integer offset = (pageDTO.getPage() - 1) * pageDTO.getPageSize();
-
-        Integer pageSize = pageDTO.getPageSize();
         Integer total = landingPageDAO.count(owner);
-        Integer totalPage = total / pageSize + (total % pageSize == 0 ? 0 : 1);
-        landingPageDTO.setPage(pageDTO.getPage());
-        landingPageDTO.setPageSize(pageSize);
-        landingPageDTO.setTotal(total);
-        landingPageDTO.setTotalPage(totalPage);
-        landingPageDTO.setList(landingPageDAO.find(owner, offset, pageSize));
 
+        LandingPageDTO landingPageDTO = PageUtils.getPageDTO(pageDTO, total, LandingPageDTO.class);
+        if (Objects.isNull(landingPageDTO)) {
+            return null;
+        }
+
+        landingPageDTO.setList(landingPageDAO.find(owner, offset, pageDTO.getPageSize()));
         return landingPageDTO;
     }
 }

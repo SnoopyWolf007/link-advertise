@@ -1,4 +1,4 @@
-package org.link.advertise.landingpage.dto;
+package org.link.advertise.core.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

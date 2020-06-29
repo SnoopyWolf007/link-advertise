@@ -3,11 +3,12 @@ package org.link.advertise.landingpage.service.impl;
 import com.alibaba.druid.util.StringUtils;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.link.advertise.core.dto.PageDTO;
 import org.link.advertise.core.entity.DomainInfo;
 import org.link.advertise.core.util.Md5Util;
+import org.link.advertise.core.util.PageUtils;
 import org.link.advertise.landingpage.dao.DomainDAO;
 import org.link.advertise.landingpage.dto.DomainDTO;
-import org.link.advertise.landingpage.dto.PageDTO;
 import org.link.advertise.landingpage.service.DomainService;
 import org.springframework.stereotype.Service;
 
@@ -50,18 +51,15 @@ public class DomainServiceImpl implements DomainService {
             return new DomainDTO(pageDTO.getPage(), pageDTO.getPageSize());
         }
 
-        DomainDTO domainDTO = new DomainDTO();
         Integer offset = (pageDTO.getPage() - 1) * pageDTO.getPageSize();
-
-        Integer pageSize = pageDTO.getPageSize();
         Integer total = domainDAO.count(owner);
-        Integer totalPage = total / pageSize + (total % pageSize == 0 ? 0 : 1);
-        domainDTO.setPage(pageDTO.getPage());
-        domainDTO.setPageSize(pageSize);
-        domainDTO.setTotal(total);
-        domainDTO.setTotalPage(totalPage);
-        domainDTO.setList(domainDAO.find(owner, offset, pageSize));
 
+        DomainDTO domainDTO = PageUtils.getPageDTO(pageDTO, total, DomainDTO.class);
+        if (Objects.isNull(domainDTO)) {
+            return null;
+        }
+
+        domainDTO.setList(domainDAO.find(owner, offset, pageDTO.getPageSize()));
         return domainDTO;
     }
 }
