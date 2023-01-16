@@ -2,18 +2,15 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>link-advertise</artifactId>
+        <groupId>cn.link.kit</groupId>
+        <version>2.0.0</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.link.kit</groupId>
-    <artifactId>link-advertise</artifactId>
-    <packaging>pom</packaging>
-    <version>2.0.0</version>
-    <modules>
-        <module>link-core-framework</module>
-        <module>link-module-org</module>
-        <module>link-biz-server</module>
-    </modules>
-    <name>link-advertise</name>
+    <artifactId>link-module-org</artifactId>
+    <name>link-module-org</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,6 +19,32 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+            <version>1.18.24</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.link.kit</groupId>
+            <artifactId>link-core-framework</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.3.22</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.3.22</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 

@@ -7,19 +7,24 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="landing-page-server" />
-        <module name="grab-data-server" />
-        <module name="link-eureka-server" />
-        <module name="dot-server" />
-        <module name="talk-server" />
-        <module name="form-collection-server" />
-        <module name="advertise-server" />
-        <module name="report-server" />
-        <module name="sales-tracking-server" />
-        <module name="organization-server" />
-        <module name="link-advertise-core" />
+        <module name="link-core-framework" />
+        <module name="link-biz-server" />
+        <module name="link-module-org" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="advertise-server" target="1.8" />
+      <module name="dot-server" target="1.8" />
+      <module name="form-collection-server" target="1.8" />
+      <module name="grab-data-server" target="1.8" />
+      <module name="landing-page-server" target="1.8" />
+      <module name="link-advertise-core" target="1.8" />
+      <module name="link-eureka-server" target="1.8" />
+      <module name="organization-server" target="1.8" />
+      <module name="report-server" target="1.8" />
+      <module name="sales-tracking-server" target="1.8" />
+      <module name="talk-server" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -28,6 +33,7 @@
       <module name="form-collection-server" options="-parameters" />
       <module name="grab-data-server" options="-parameters" />
       <module name="landing-page-server" options="-parameters" />
+      <module name="link-biz-server" options="-parameters" />
       <module name="link-eureka-server" options="-parameters" />
       <module name="organization-server" options="-parameters" />
       <module name="report-server" options="-parameters" />

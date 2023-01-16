@@ -5,17 +5,23 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/organization-server/pom.xml" />
-        <option value="$PROJECT_DIR$/landing-page-server/pom.xml" />
-        <option value="$PROJECT_DIR$/dot-server/pom.xml" />
-        <option value="$PROJECT_DIR$/advertise-server/pom.xml" />
-        <option value="$PROJECT_DIR$/grab-data-server/pom.xml" />
-        <option value="$PROJECT_DIR$/talk-server/pom.xml" />
-        <option value="$PROJECT_DIR$/form-collection-server/pom.xml" />
-        <option value="$PROJECT_DIR$/sales-tracking-server/pom.xml" />
-        <option value="$PROJECT_DIR$/report-server/pom.xml" />
-        <option value="$PROJECT_DIR$/link-eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/link-biz-server/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/advertise-server/pom.xml" />
+        <option value="$PROJECT_DIR$/dot-server/pom.xml" />
+        <option value="$PROJECT_DIR$/form-collection-server/pom.xml" />
+        <option value="$PROJECT_DIR$/grab-data-server/pom.xml" />
+        <option value="$PROJECT_DIR$/landing-page-server/pom.xml" />
+        <option value="$PROJECT_DIR$/link-advertise-core/pom.xml" />
+        <option value="$PROJECT_DIR$/link-eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/organization-server/pom.xml" />
+        <option value="$PROJECT_DIR$/report-server/pom.xml" />
+        <option value="$PROJECT_DIR$/sales-tracking-server/pom.xml" />
+        <option value="$PROJECT_DIR$/talk-server/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">

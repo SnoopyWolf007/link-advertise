@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/link-advertise?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+        enable_lazy_load_no_trans: true
+    show-sql: false
+  # 解决hibernateLazyInitializer导致bean无法转为json。也可以在实体中加注解 @JsonIgnoreProperties(value = {"hibernateLazyInitializer"})
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+  data:
+    web:
+      pageable:
+        one-indexed-parameters: true
